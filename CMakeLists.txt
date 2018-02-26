@@ -4,12 +4,10 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(PORTAUDIO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/vendor/portaudio)
 set(PORTAUDIO_INCLUDE_DIR ${PORTAUDIO_DIR}/include)
-set(PORTAUDIO_LIB_DIR ${PORTAUDIO_DIR}/lib)
 
 add_executable(synth_for_web_assembly main.cpp)
 include_directories(${PORTAUDIO_INCLUDE_DIR})
 target_link_libraries(synth_for_web_assembly ${PORTAUDIO_DIR}/libportaudio_static.a)
-link_directories(${PORTAUDIO_LIB_DIR})
 
 find_library(AUDIO_UNIT AudioUnit)
 find_library(CORE_SERVICES CoreServices)
